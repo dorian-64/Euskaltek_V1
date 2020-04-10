@@ -37,7 +37,7 @@ Pour lancer le serveur : `` symfony serve ``
 
 ## Fabriqué avec
 
-* [Visual studio code ](https://atom.io/) - Editeur de textes
+* [Visual studio code ](https://code.visualstudio.com/) - Editeur de textes
 * [Boostrap.css](https://getbootstrap.com/) - Framework CSS
 
 
