@@ -61,6 +61,21 @@ class Intervention
      */
     private $date_fin;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $materiel;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $motdepasse;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $cable;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -170,6 +185,42 @@ class Intervention
     public function setDateFin(?\DateTimeInterface $date_fin): self
     {
         $this->date_fin = $date_fin;
+
+        return $this;
+    }
+
+    public function getMateriel(): ?string
+    {
+        return $this->materiel;
+    }
+
+    public function setMateriel(string $materiel): self
+    {
+        $this->materiel = $materiel;
+
+        return $this;
+    }
+
+    public function getMotdepasse(): ?string
+    {
+        return $this->motdepasse;
+    }
+
+    public function setMotdepasse(?string $motdepasse): self
+    {
+        $this->motdepasse = $motdepasse;
+
+        return $this;
+    }
+
+    public function getCable(): ?string
+    {
+        return $this->cable;
+    }
+
+    public function setCable(?string $cable): self
+    {
+        $this->cable = $cable;
 
         return $this;
     }

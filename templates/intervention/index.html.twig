@@ -1,5 +1,32 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
+<h2 class="text-center">Liste des fiches d'intervention</h2>
+    <table class="table mt-5">
+  <thead>
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Matériel</th>
+      <th scope="col">Date</th>
+      <th scope="col">Technicien</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for intervention in intervention %}
+        <tr>
+        <th scope="row">{{ intervention.nom}}</th>
+        <td>{{ intervention.prenom}}</td>
+        <td>{{ intervention.materiel}}</td>
+        <td>{{ intervention.date|date('d/m/Y')}}</td>
+        <td>{{ intervention.technicien}}</td>
+        <td><a href=""></a></i>
+            <a href=""></a>
+            <a href=""></a>
+        </td>
+        
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}

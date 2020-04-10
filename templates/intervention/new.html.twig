@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% form_theme formIntervention 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    <h2 class="text-center">Fiche d'intervention</h2>
+    <div class="container">
+        {{form_start(formIntervention)}}
+
+        <div class="row">
+            <div class="col-4">{{form_row(formIntervention.date)}}</div>
+            <div class="col-4"></div>
+            <div class="col-4">{{form_row(formIntervention.status)}}</div>
+        </div>
+        <div class="row">
+            <div class="col-4" >{{form_row(formIntervention.nom)}}</div>
+            <div class="col-4" >{{form_row(formIntervention.prenom)}}</div>
+            <div class="col-4" >{{form_row(formIntervention.telephone)}}</div>
+        </div>
+        <div class="row">
+            <div class="col-4" >{{form_row(formIntervention.materiel)}}</div>
+            <div class="col-4" >{{form_row(formIntervention.cable)}}</div>
+            <div class="col-4" >{{form_row(formIntervention.motdepasse)}}</div>
+        </div>
+        <div class="row">
+            <div class="col-6">{{form_row(formIntervention.observation)}}</div>
+            <div class="col-6">{{form_row(formIntervention.resultat)}}</div>
+        </div>
+        <div class="row">
+            <div class="col-4">{{form_row(formIntervention.technicien)}}</div>
+            <div class="col-4"></div>
+            <div class="col-4">{{form_row(formIntervention.date_fin)}}</div>
+        </div>
+    </div>
+
+    {{form_end(formIntervention)}}
+{% endblock %}
