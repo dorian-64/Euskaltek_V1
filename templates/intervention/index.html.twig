@@ -2,6 +2,7 @@
 
 {% block body %}
 <h2 class="text-center">Liste des fiches d'intervention</h2>
+<a class="text-center btn btn-primary" href="{{ path('intervention_new') }}">Crée fiche d'intervention</a>
     <table class="table mt-5">
   <thead>
     <tr>
@@ -20,8 +21,8 @@
         <td>{{ intervention.materiel}}</td>
         <td>{{ intervention.date|date('d/m/Y')}}</td>
         <td>{{ intervention.technicien}}</td>
-        <td><a href=""></a></i>
-            <a href=""></a>
+        <td><a href="{{ path('intervention_show',  {'id' : intervention.id})}}">Voir </a></i>
+            <a href="{{ path('intervention_edit',  {'id' : intervention.id})}}">Modifier</a>
             <a href=""></a>
         </td>
         

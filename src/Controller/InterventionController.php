@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class InterventionController extends AbstractController
 {
@@ -86,6 +87,7 @@ class InterventionController extends AbstractController
                             'Non' => 'Non'
                         ]
                     ])
+                    
                     ->getForm();
 
             $form->handleRequest($request);
@@ -105,17 +107,22 @@ class InterventionController extends AbstractController
         return $this->render('intervention/new.html.twig', [
             'controller_name' => 'InterventionController',
             'formIntervention' =>$form->createView(),
-
+            'editMode' => $intervention->getId() !== null
         ]);
     }
 
     /**
      * @Route("/intervention/{id}", name="intervention_show")
      */
-    public function show()
+    public function show($id)
     {
+        $repo = $this->getDoctrine()->getRepository(Intervention::class);
+
+        $intervention = $repo->find($id);
+
         return $this->render('intervention/show.html.twig', [
             'controller_name' => 'InterventionController',
+            'intervention' =>$intervention
         ]);
     }
 }

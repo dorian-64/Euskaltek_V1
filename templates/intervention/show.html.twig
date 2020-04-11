@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2 class="text-center"> Fiche d'intervention : {{intervention.nom}}</h2>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-4">Date: <strong>{{intervention.date|date('d/m/Y')}}</strong></div>
+            <div class="col-4"></div>
+            <div class="col-4">Status: <strong> {{intervention.status}} </strong></div>
+        </div>
+        <div class="row">
+            <div class="col-4">Nom : <strong>{{intervention.nom}}</strong></div>
+            <div class="col-4">Prénom : <strong>{{intervention.prenom}}</strong></div>
+            <div class="col-4">Téléphone : {{intervention.telephone}}</div>
+        </div>
+        <div class="row">
+            <div class="col-4">Matériel : {{intervention.materiel}}</div>
+            <div class="col-4">chargeur : {{intervention.cable}}</div>
+            <div class="col-4">Mot de passe : {{intervention.motdepasse}}</div>
+        </div>
+        <div class="row">
+            <div class="col-6">{{intervention.observation}}</div>
+            <div class="col-6">{{intervention.resultat}}</div>
+        </div>
+        <div class="row">
+            <div class="col-4">Technicien : {{intervention.technicien}}</div>
+            <div class="col-4"></div>
+            <div class="col-4">Date de fin : {{intervention.datefin|date('d/m/Y')}}</div>
+        </div>
+        <a class=" btn btn-success" href="{{ path('intervention') }}">Retour</a>
+    </div>
+{% endblock %}

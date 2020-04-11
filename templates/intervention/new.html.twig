@@ -30,6 +30,11 @@
             <div class="col-4"></div>
             <div class="col-4">{{form_row(formIntervention.date_fin)}}</div>
         </div>
+        {% if editMode %}
+        <button class="btn btn-primary" type="submit">Enregistrer les modification</button>
+        {% else %}
+        <button class="btn btn-primary" type="submit">Enregistrer la nouvelle fiche</button>
+        {% endif %}
     </div>
 
     {{form_end(formIntervention)}}
