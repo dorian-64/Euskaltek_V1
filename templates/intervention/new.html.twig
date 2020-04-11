@@ -13,17 +13,17 @@
         </div>
         <div class="row">
             <div class="col-4" >{{form_row(formIntervention.nom)}}</div>
-            <div class="col-4" >{{form_row(formIntervention.prenom)}}</div>
-            <div class="col-4" >{{form_row(formIntervention.telephone)}}</div>
+            <div class="col-4" >{{form_row(formIntervention.prenom,{'attr': {'placeholder': ' Champ non obligatoire'}})}}</div>
+            <div class="col-4" >{{form_row(formIntervention.telephone,{'attr': {'placeholder': ' Champ non obligatoire'}})}}</div>
         </div>
         <div class="row">
             <div class="col-4" >{{form_row(formIntervention.materiel)}}</div>
             <div class="col-4" >{{form_row(formIntervention.cable)}}</div>
-            <div class="col-4" >{{form_row(formIntervention.motdepasse)}}</div>
+            <div class="col-4" >{{form_row(formIntervention.motdepasse,{'attr': {'placeholder': ' Champ non obligatoire'}})}}</div>
         </div>
         <div class="row">
             <div class="col-6">{{form_row(formIntervention.observation)}}</div>
-            <div class="col-6">{{form_row(formIntervention.resultat)}}</div>
+            <div class="col-6">{{form_row(formIntervention.resultat,{'attr': {'placeholder': ' Champ non obligatoire'}})}}</div>
         </div>
         <div class="row">
             <div class="col-4">{{form_row(formIntervention.technicien)}}</div>

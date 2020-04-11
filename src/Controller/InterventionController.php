@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class InterventionController extends AbstractController
 {
@@ -56,7 +57,7 @@ class InterventionController extends AbstractController
                     ->add('nom')
                     ->add('prenom')
                     ->add('telephone')
-                    ->add('observation')
+                    ->add('observation', TextareaType::class)
                     ->add('resultat')
                     ->add('technicien', ChoiceType::class, [
                         'choices'=> [
