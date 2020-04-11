@@ -14,18 +14,21 @@
     </tr>
   </thead>
   <tbody>
-    {% for intervention in intervention %}
-        <tr>
-        <th scope="row">{{ intervention.nom}}</th>
-        <td>{{ intervention.prenom}}</td>
-        <td>{{ intervention.materiel}}</td>
-        <td>{{ intervention.date|date('d/m/Y')}}</td>
-        <td>{{ intervention.technicien}}</td>
-        <td><a href="{{ path('intervention_show',  {'id' : intervention.id})}}">Voir </a></i>
-            <a href="{{ path('intervention_edit',  {'id' : intervention.id})}}">Modifier</a>
-            <a href=""></a>
-        </td>
-        
+    {% for intervention in intervention|reverse %}
+        {% if intervention.status == 'A Faire'%}
+          <tr style="background-color: rgba(226, 3, 3, 0.63) ">
+        {% else %}
+          <tr style="background-color: rgba(13, 145, 44, 0.62) ">
+        {% endif %}
+          <th scope="row">{{ intervention.nom}}</th>
+            <td>{{ intervention.prenom}}</td>
+            <td>{{ intervention.materiel}}</td>
+            <td>{{ intervention.date|date('d/m/Y')}}</td>
+            <td>{{ intervention.technicien}}</td>
+            <td><a href="{{ path('intervention_show',  {'id' : intervention.id})}}">Voir </a></i>
+                <a href="{{ path('intervention_edit',  {'id' : intervention.id})}}">Modifier</a>
+                <a href=""></a>
+            </td>
         </tr>
     {% endfor %}
   </tbody>
